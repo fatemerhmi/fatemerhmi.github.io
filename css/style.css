@@ -332,12 +332,14 @@ figure {
           border: none;
           font-weight: 400; }
           #colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn {
-            color: #000;
-            border: 1px solid #000;
+            color: #cccccc;
+            border: 1px solid #cccccc;
             background: transparent !important; }
             #colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn:hover {
               background: transparent !important;
-              border: 1px solid #000 !important; }
+              border: 1px solid #2c98f0 !important; 
+              color: #2c98f0;
+            }
           @media screen and (max-width: 768px) {
             #colorlib-hero .flexslider .slider-text > .slider-text-inner .btn {
               width: 100%; } }
