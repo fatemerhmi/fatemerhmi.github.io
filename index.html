@@ -58,8 +58,7 @@
     <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/font-mfizz.css">
 	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-	
-	<!--------- till here ---------->
+		<!--------- till here ---------->
 	</head>
 	<body>
 	<div id="colorlib-page">
@@ -81,7 +80,7 @@
 						<li><a href="#" data-nav-section="education">Education</a></li>
 						<li><a href="#" data-nav-section="experience">Experience</a></li>
 						<li><a href="#" data-nav-section="texperience">Teaching Experience</a></li>
-						<li><a href="#" data-nav-section="project">projects</a></li>
+						<li><a href="#" data-nav-section="project" onclick="setTimeout(filterSelection('all'), 3000)">projects</a></li>
 						<li><a href="#" data-nav-section="blog">Blog</a></li>
 						<li><a href="#" data-nav-section="contact">Contact</a></li>
 					</ul>
@@ -374,7 +373,7 @@
 					            <div class="timeline-entry-inner">
 
 					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-school"></i>
 					               </div>
 
 					               <div class="timeline-label">
@@ -393,7 +392,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-school"></i>
 					               </div>
 					               <div class="timeline-label">
 					               	<h2><a href="#">B.S. Software Engineering</a> <span>Sep 2013 – Dec 2017</span></h2>
@@ -426,7 +425,7 @@
 					            <div class="timeline-entry-inner">
 
 					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-briefcase"></i>
 					               </div>
 
 					               <div class="timeline-label">
@@ -446,7 +445,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-briefcase"></i>
 					               </div>
 					               <div class="timeline-label">
 					               	<h2><a href="#">Data Analyst</a> <span>Aug 2018 – Feb 2019</span></h2>
@@ -467,7 +466,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-briefcase"></i>
 					               </div>
 					               <div class="timeline-label">
 					               	<h2><a href="#">Linux Instructor</a> <span>Jun 2015 – Aug 2016</span></h2>
@@ -508,7 +507,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-1">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-chalkboard-teacher"></i>
 					               </div>
 					               <div class="timeline-label">
 					                  <h2><a href="#">Practical Data Science Teacher Assistant - CSCI 1109</a> </h2>
@@ -527,7 +526,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-2">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-chalkboard-teacher"></i>
 					               </div>
 					               <div class="timeline-label">
 					                  <h2><a href="#">Computer C Programming - ENGM1081</a> </h2>
@@ -543,7 +542,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-3">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-chalkboard-teacher"></i>
 					               </div>
 					               <div class="timeline-label">
 					                  <h2><a href="#">Teacher Assistant at Learning centre</a> <span>May 2019 – Aug 2020</span></h2>
@@ -560,7 +559,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-4">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-chalkboard-teacher"></i>
 					               </div>
 					               <div class="timeline-label">
 					                  <h2><a href="#">Databases Lab Assistant</a> <span>Feb 2017 – May 2017</span></h2>
@@ -577,7 +576,7 @@
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-5">
-					                  <i class="icon-pen2"></i>
+					                  <i class="fas fa-chalkboard-teacher"></i>
 					               </div>
 					               <div class="timeline-label">
 					                  <h2><a href="#">Databases Course Teaching Assistant</a> <span>Sep 2016 – Jan 2017</span></h2>
@@ -614,11 +613,177 @@
 					</div>
 					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
 						<div class="col-md-12">
-							<p class="work-menu"><span><a href="#" class="active">Graphic Design</a></span> <span><a href="#">Web Design</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p>
+							<!-- <p class="work-menu"><span><a href="#" class="active">All Projects</a></span> <span><a href="#">Projects in Dalhousie</a></span> <span><a href="#">Course projects in Dalhsouie</a></span> <span><a href="#">Apps</a></span></p> -->
+							<div id="myBtnContainer">
+								<button class="btn active" onclick="filterSelection('all')"> All</button>
+								<button class="btn" onclick="filterSelection('curr')"> Current Projects</button>
+								<button class="btn" onclick="filterSelection('dal')"> DalhousieU Course Projects</button>
+								<button class="btn" onclick="filterSelection('people')"> ShirazU course Projects</button>
+							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+						 <div class="col-md-12">
+							<div class="timeline-centered">
+								<article class="timeline-entry animate-box column curr" data-animate-effect="fadeInLeft">
+								   <div class="timeline-entry-inner">
+									  <div class="timeline-icon color-1">
+										 <i class="fas fa-chalkboard-teacher"></i>
+									  </div>
+									  <div class="timeline-label">
+										 <h2><a href="#">Using Multi-task Learning to improve Multi-label classifications task</a><span> March 2020 - now</span> </h2>
+										 <p><b><a href="https://www.dal.ca/faculty/computerscience.html">Dalhousie University</a>, Halifax, Canada </b>
+										   <ul>
+											   <li>Master’s Thesis</li>
+											   <li>Developing a CLI tool for multi-tasking and multi-head architectures using
+												mostly Python, PyTorch, hugging face libraries, and MLflow.</li>
+											   <li>Using language pre-trained models such as BERT, BioBERT, and Roberta</li>
+										   </ul>
+										 </p>
+									  </div>
+								   </div>
+								</article>
+								<article class="timeline-entry animate-box column curr" data-animate-effect="fadeInLeft">
+								   <div class="timeline-entry-inner">
+									  <div class="timeline-icon color-2">
+										 <i class="fas fa-chalkboard-teacher"></i>
+									  </div>
+									  <div class="timeline-label">
+										 <h2><a href="#">Learn Faster and Forget Slower via FAST and Stable Task Adaptation for
+											pre-trained language models</a> <span> May 2020 - now</span></h2>
+										 <p><b><a href="https://www.dal.ca/faculty/computerscience.html">Dalhousie University</a>, Halifax, Canada </b>
+										   <ul>
+											   <li>Improving the fine-tunning algorithm of pre-trained language model</li>
+											   <li>Developing with Python, PyTorch, hugging face libraries, and MLflow.</li>
+											   <li>Team project</li>
+										   </ul>
+										 </p>
+									  </div>
+								   </div>
+								</article>
+								<article class="timeline-entry animate-box column curr" data-animate-effect="fadeInLeft">
+								   <div class="timeline-entry-inner">
+									  <div class="timeline-icon color-3">
+										 <i class="fas fa-chalkboard-teacher"></i>
+									  </div>
+									  <div class="timeline-label">
+										 <h2><a href="#">Information Retrieval of covid-19 academic papers using language models</a> <span>April 2020 - now</span></h2>
+										 <p>
+										   <ul>
+											   <li>Dataset is from the TREC-COVID competition</li>
+											   <li>Working in this project as a Team.</li>
+											   <li>Using unsupervised fine-tunning and Siamese network to train T5 model for
+												finding related papers to a query.</li>
+										   </ul>
+										 </p>
+									  </div>
+								   </div>
+								</article>
+								<article class="timeline-entry animate-box column dal" data-animate-effect="fadeInLeft">
+									<div class="timeline-entry-inner">
+										<div class="timeline-icon color-3">
+											<i class="fas fa-chalkboard-teacher"></i>
+										</div>
+										<div class="timeline-label">
+											<h2><a href="#">Query-focused Extractive Summarization using
+												pre-trained models</a> <span>January 2020 - April 2020</span></h2>
+												<p>
+													<ul>
+														<li>Course Project for Natural Language Processing(NLP) Course</li>
+														<li>Team Project</li>
+														<li>Used different scoring functions to extract most important sentences of a document</li>
+														<li><a href="files/nlpproject.pdf">Download Project Report</a></li>
+													</ul>
+													<b>Abstract:</b>
+													In the process of writing a research paper, researchers often spend
+													a lot of time organizing and summarizing previous work related to the
+													research. To help with this problem, the proposal of this project is to use
+													Query-focused Extractive Summarization algorithms to produce relevant
+													highlights in related research. For this project, the problem of insucient
+													labeled data was solved by using pre-trained models such as BERT and
+													BioBERT to produce accurate representations of words. To measure the
+													validity of the approaches, they were applied to the BioASQ dataset of
+													medical articles and obtained results consistent with each other using
+													Cosine similarity and Euclidean distance, each with several pre-trained
+													models. One of the challenges of this project was that producing the
+													embeddings of a lot of sentences with a pre-trained model is a very time-
+													consuming task, so a scalable tool was developed to eciently compute
+													token embeddings for a variety of pre-trained models.
+												</p>
+											</div>
+										</div>
+									</article>
+									<article class="timeline-entry animate-box column dal" data-animate-effect="fadeInLeft">
+									   <div class="timeline-entry-inner">
+										  <div class="timeline-icon color-3">
+											 <i class="fas fa-chalkboard-teacher"></i>
+										  </div>
+										  <div class="timeline-label">
+											 <h2><a href="#">Classification Of Imbalanced Dataset Using BERT Embeddings</a> <span>May 2019 - Aug 2019</span></h2>
+											 <p>
+											   <ul>
+												   <li>Course Project for Deep Learning Course</li>
+												   <li>Team Project</li>
+												   <li>Used BERT embeddings to classify the type of harrasment of each tweet in a imbalanced twitter dataset.</li>
+												   <li><a href="files/Classification_of_imbalanced_dataset_using_BERT_embedding.pdf">Download Project Report</a></li>
+											   </ul>
+											   <b>Abstract:</b>
+											   Online harassment is becoming prevalent as a specific type of communication on Twitter. Considering
+											   the huge amount of user-generated tweets each day, the problem of detecting and possibly limiting
+											   these contents automatically in real-time is becoming a fundamental problem. But often real-world
+											   datasets are imbalanced, comprising predominantly of “normal” examples and less number of
+											   “abnormal” ones which causes the learning algorithm to simply generate a trivial classifier that
+											   classifies every example as the majority class. To tackle this problem, we use SMOTE to oversample
+											   the embeddings of the minority classes where the embeddings are obtained from the BERT pretrained
+											   language model. Finally, we use these oversampled embeddings to train our bi-directional
+											   LSTM classifier model to categorize the tweets into four classes: non-harassment, sexual harassment,
+											   physical harassment and indirect harassment. Our experiments show that using SMOTE on the top
+											   layer representations of BERT significantly improves the F1 score than merely adjusting the class
+											   weights.
+											 </p>
+										  </div>
+									   </div>
+									</article>
+									<article class="timeline-entry animate-box column dal" data-animate-effect="fadeInLeft">
+									   <div class="timeline-entry-inner">
+										  <div class="timeline-icon color-3">
+											 <i class="fas fa-chalkboard-teacher"></i>
+										  </div>
+										  <div class="timeline-label">
+											 <h2><a href="#">Visual Analysis Of Harassment Classification In Twitter</a> <span>May 2019 - Aug 2019</span></h2>
+											 <p>
+											   <ul>
+												   <li>Course Project for Deep Learning Course</li>
+												   <li>Team Project</li>
+												   <li>Developed a visualization system using D3 to demonstrate the semantic similarity of words.</li>
+												   <li><a href="files/Classification_of_imbalanced_dataset_using_BERT_embedding.pdf">Download Project Report</a></li>
+												   <li>Although We used the same dataset for this project and the deep learning course, the methogologies and purpose of the projects are completly different. </li>
+											   </ul>
+											   <b>Abstract:</b>
+											   In our project, we
+												develop a Deep Neural Network model to classify the tweets based on four classes: non-harassment,
+												sexual harassment, physical harassment and indirect harassment. We then use Deep SHAP, a unified
+												approach that explains the output of any machine learning model to interpret the predictions of our
+												classifier. We demonstrate the semantic similarity of words in the tweet by visualizing the embeddings
+												in low dimensions using t-SNE. To provide a quick, high level information of the similarities and
+												anomalies between the categories, the final predictions of the model are summarized into different
+												styles of TreeMaps.
+											 </p>
+										  </div>
+									   </div>
+									</article>
+									<article class="timeline-entry begin animate-box column curr dal" data-animate-effect="fadeInBottom">
+								   <div class="timeline-entry-inner">
+									  <div class="timeline-icon color-none">
+									  </div>
+								   </div>
+								</article>
+							 </div>
+						  </div> 
+
+						<!-- END GRID -->
+						<!-- </div> -->
+						<!-- <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="project" style="background-image: url(images/img-1.jpg);">
 								<div class="desc">
 									<div class="con">
@@ -632,8 +797,8 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+						</div> -->
+						<!-- <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
 							<div class="project" style="background-image: url(images/img-2.jpg);">
 								<div class="desc">
 									<div class="con">
@@ -647,8 +812,8 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
+						</div> -->
+						<!-- <div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
 							<div class="project" style="background-image: url(images/img-3.jpg);">
 								<div class="desc">
 									<div class="con">
@@ -662,8 +827,8 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
+						</div> -->
+						<!-- <div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
 							<div class="project" style="background-image: url(images/img-4.jpg);">
 								<div class="desc">
 									<div class="con">
@@ -677,8 +842,8 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+						</div> -->
+						<!-- <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
 							<div class="project" style="background-image: url(images/img-5.jpg);">
 								<div class="desc">
 									<div class="con">
@@ -692,8 +857,8 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+						</div> -->
+						<!-- <div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
 							<div class="project" style="background-image: url(images/img-6.jpg);">
 								<div class="desc">
 									<div class="con">
@@ -707,13 +872,13 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-md-12 animate-box">
 							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</section>
 
@@ -856,6 +1021,7 @@
 	<script src="js/jquery.countTo.js"></script>
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+	<script src="js/portfolio.js"></script>
 
 	</body>
 </html>
