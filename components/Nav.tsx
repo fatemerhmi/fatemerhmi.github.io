@@ -3,13 +3,13 @@
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#hero", label: "Home" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#publications", label: "Publications" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#hero", label: "Home" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#publications", label: "Publications" },
+  { href: "/#education", label: "Education" },
+  { href: "/#contact", label: "Contact" },
   { href: "/blog", label: "Writing" },
 ];
 
@@ -20,7 +20,7 @@ export default function Nav() {
     <nav className="sticky top-0 z-50 bg-white border-b border-slate-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
-          <a href="#hero" className="font-semibold text-slate-900 text-sm">
+          <a href="/" className="font-semibold text-slate-900 text-sm">
             Fatemeh Rahimi
           </a>
 
