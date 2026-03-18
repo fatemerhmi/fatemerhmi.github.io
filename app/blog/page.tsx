@@ -1,5 +1,6 @@
-import Link from "next/link";
+import { Suspense } from "react";
 import { getAllPosts } from "@/lib/posts";
+import BlogList from "@/components/BlogList";
 
 export const metadata = {
   title: "Writing — Fatemeh Rahimi",
@@ -15,38 +16,9 @@ export default function BlogIndex() {
       <p className="text-slate-500 mb-12">
         Thoughts on NLP, AI systems, and engineering.
       </p>
-
-      {posts.length === 0 ? (
-        <p className="text-slate-400">No posts yet.</p>
-      ) : (
-        <ul className="space-y-10">
-          {posts.map((post) => (
-            <li key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group block">
-                <p className="text-xs text-slate-400 mb-1">{post.date}</p>
-                <h2 className="text-xl font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
-                  {post.title}
-                </h2>
-                {post.excerpt && (
-                  <p className="text-slate-500 text-sm">{post.excerpt}</p>
-                )}
-                {post.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs bg-slate-100 text-slate-500 px-2 py-0.5 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      <Suspense>
+        <BlogList posts={posts} />
+      </Suspense>
     </main>
   );
 }

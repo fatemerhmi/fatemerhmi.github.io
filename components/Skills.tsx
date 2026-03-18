@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const skillGroups = [
   {
     group: "Languages",
@@ -37,16 +39,25 @@ const skillGroups = [
   },
   {
     group: "Infrastructure",
-    items: ["Git", "Docker", "REST APIs", "MySQL"],
+    items: ["Git", "Docker", "REST APIs", "MySQL", "tmux"],
   },
 ];
 
+const skillLinks: Record<string, string> = {
+  tmux: "/blog?tag=tmux",
+};
+
 function Pill({ label }: { label: string }) {
-  return (
-    <span className="inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full">
-      {label}
-    </span>
-  );
+  const href = skillLinks[label];
+  const cls = "inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full";
+  if (href) {
+    return (
+      <Link href={href} className={`${cls} hover:bg-blue-50 hover:text-blue-600 transition-colors`}>
+        {label} ↗
+      </Link>
+    );
+  }
+  return <span className={cls}>{label}</span>;
 }
 
 export default function Skills() {
