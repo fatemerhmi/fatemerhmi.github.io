@@ -43,21 +43,43 @@ const skillGroups = [
   },
 ];
 
+const skillLevels: Record<string, number> = {
+  Python: 80,
+  SQL: 50,
+};
+
+const DEFAULT_LEVEL = 10;
+
 const skillLinks: Record<string, string> = {
   tmux: "/blog?tag=tmux",
 };
 
 function Pill({ label }: { label: string }) {
   const href = skillLinks[label];
-  const cls = "inline-block bg-slate-100 text-slate-700 text-xs font-medium px-3 py-1 rounded-full";
+  const level = skillLevels[label] ?? DEFAULT_LEVEL;
+
+  const baseStyle = {
+    background: `linear-gradient(to right, #bfdbfe ${level}%, #f1f5f9 ${level}%)`,
+  };
+
+  const cls = "inline-block text-slate-700 text-xs font-medium px-3 py-1 rounded-full border border-slate-200";
+
   if (href) {
     return (
-      <Link href={href} className={`${cls} hover:bg-blue-50 hover:text-blue-600 transition-colors`}>
+      <Link
+        href={href}
+        style={baseStyle}
+        className={`${cls} hover:text-blue-600 transition-colors`}
+      >
         {label} ↗
       </Link>
     );
   }
-  return <span className={cls}>{label}</span>;
+  return (
+    <span style={baseStyle} className={cls}>
+      {label}
+    </span>
+  );
 }
 
 export default function Skills() {
