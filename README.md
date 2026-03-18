@@ -1,2 +1,2 @@
 # fatemerhmi.github.io
-My Resume Website
+My personal portfolio website. Check it out at **https://fatemerhmi.github.io/**
