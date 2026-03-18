@@ -31,9 +31,10 @@ export default function Hero() {
               Fatemeh Rahimi
             </h1>
             <p className="text-lg text-slate-600 max-w-xl mb-8 leading-relaxed">
-              7+ years building production NLP systems — from transformer
-              fine-tuning to multi-agent LLM pipelines and document
-              understanding. Currently a Senior NLP Scientist at{" "}
+              7+ years shipping production NLP and AI systems — from
+              transformer fine-tuning and RAG pipelines to multi-agent LLM
+              orchestration and document understanding. Currently leading
+              AI development as a Senior NLP Scientist at{" "}
               <a
                 href="https://www.pythonic.ai/"
                 target="_blank"

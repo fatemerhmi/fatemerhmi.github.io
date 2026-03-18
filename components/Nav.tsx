@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#publications", label: "Publications" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
+  { href: "/blog", label: "Writing" },
 ];
 
 export default function Nav() {

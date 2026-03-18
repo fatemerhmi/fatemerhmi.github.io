@@ -6,11 +6,11 @@ const jobs = [
     location: "Milwaukee, WI, US (Remote)",
     period: "Feb 2022 – Present",
     bullets: [
-      "Led end-to-end development of 3 production NLP services; primary contributor and technical owner for one",
-      "Designed and built a multi-agent LLM framework to automate triaging and resolution of support emails involving routine code/configuration changes",
+      "Led end-to-end development and deployment of 3 production NLP services for document understanding; primary technical owner for one",
+      "Architected a multi-agent LLM system with prompt-engineered reasoning, tool orchestration, and human-in-the-loop escalation to automate support email triage and resolution",
+      "Built RAG pipelines and evaluation harnesses to measure model quality, enabling data-driven iteration across releases",
       "Developed automation tooling to streamline team workflows across data labeling, sprint planning, and QA",
-      "Authored labeling guidelines and coordinated cross-functional annotation pipelines",
-      "Established project management infrastructure from scratch; ran sprint ceremonies and stakeholder coordination",
+      "Coordinated cross-functional annotation pipelines and mentored team members on NLP best practices",
     ],
     highlight: true,
   },
@@ -21,10 +21,9 @@ const jobs = [
     location: "Montreal, Canada (Remote)",
     period: "Nov 2020 – Jan 2022",
     bullets: [
-      "Performed research on hospital clinical reports in the biomedical NLP domain",
-      "Contributed to de-identification development and research stack",
-      "Researched Named Entity Recognition and measurement extraction with rule-based and SOTA language models",
-      "Designed CLI tools for applying Transformer-based models to real-world biomedical data",
+      "Built NLP pipelines for hospital clinical report analysis — de-identification, named entity recognition, and measurement extraction",
+      "Applied and evaluated transformer-based models (BioBERT, ClinicalBERT) on real-world biomedical datasets",
+      "Designed production-grade CLI tools for end-to-end model inference on clinical documents",
     ],
     highlight: false,
   },
@@ -35,8 +34,8 @@ const jobs = [
     location: "Halifax, Canada",
     period: "Mar 2019 – Apr 2021",
     bullets: [
-      "Applied deep language models (BERT, BioBERT, BlueBERT) to downstream NLP tasks",
-      "Developed MTLV — a CLI library for multi-task learning architectures (thesis project, DocEng-2021)",
+      "Applied and evaluated deep language models (BERT, BioBERT, BlueBERT) on downstream NLP tasks with rigorous experimental design",
+      "Developed MTLV — a multi-task learning library with 4 architectures and a novel task-clustering method (published at ACM DocEng-2021)",
     ],
     highlight: false,
   },
@@ -61,7 +60,7 @@ export default function WorkExperience() {
         <h2 className="text-2xl font-bold text-slate-900 mb-2">
           Work Experience
         </h2>
-        <p className="text-slate-500 text-sm mb-10">Career history</p>
+        <p className="text-slate-500 text-sm mb-10">7+ years in NLP, AI, and production ML</p>
 
         <div className="relative">
           {/* Vertical line */}

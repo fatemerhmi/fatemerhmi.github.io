@@ -1,22 +1,24 @@
 const skillGroups = [
   {
     group: "Languages",
-    items: ["Python"],
+    items: ["Python", "SQL"],
   },
   {
     group: "LLMs & GenAI",
     items: [
       "Hugging Face Transformers",
       "RAG pipelines",
-      "LangChain",
+      "LangChain / LangGraph",
       "OpenAI API",
       "Anthropic API",
-      "Multi-agent frameworks",
+      "Multi-agent orchestration",
+      "Prompt engineering",
+      "LLM evaluation",
     ],
   },
   {
     group: "ML / DL",
-    items: ["PyTorch", "scikit-learn", "MLflow"],
+    items: ["PyTorch", "scikit-learn", "MLflow", "Model fine-tuning (PEFT / LoRA)"],
   },
   {
     group: "NLP",
@@ -25,19 +27,17 @@ const skillGroups = [
       "NLTK",
       "BERT / RoBERTa / ELECTRA",
       "Document understanding",
+      "Named entity recognition",
+      "Text classification",
     ],
   },
   {
-    group: "Data",
-    items: ["NumPy", "pandas", "Jupyter"],
+    group: "Data & Experimentation",
+    items: ["NumPy", "pandas", "Jupyter", "A/B testing", "Statistical analysis"],
   },
   {
-    group: "Databases",
-    items: ["MySQL", "SQL"],
-  },
-  {
-    group: "DevOps",
-    items: ["Git", "Docker"],
+    group: "Infrastructure",
+    items: ["Git", "Docker", "REST APIs", "MySQL"],
   },
 ];
 
@@ -55,7 +55,7 @@ export default function Skills() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-slate-900 mb-2">Skills</h2>
         <p className="text-slate-500 text-sm mb-10">
-          Technologies I work with daily
+          Core technologies and competencies
         </p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

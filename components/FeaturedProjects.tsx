@@ -4,8 +4,26 @@ const projects = [
     period: "2023 – present",
     org: "Pythonic AI",
     description:
-      "LLM-based multi-agent system that automates triage and resolution of support emails involving routine code and configuration changes. Reduces manual load on the engineering team.",
-    stack: ["Python", "LLM APIs", "Multi-agent orchestration", "RAG"],
+      "Designed and built an LLM-powered multi-agent system that autonomously triages and resolves support emails involving routine code and configuration changes. Uses prompt-engineered reasoning chains, tool orchestration, and human-in-the-loop escalation to reduce manual engineering effort.",
+    stack: ["Python", "LLM APIs", "Multi-agent orchestration", "RAG", "Prompt engineering"],
+    links: [],
+  },
+  {
+    title: "Production NLP Services",
+    period: "2022 – present",
+    org: "Pythonic AI",
+    description:
+      "Led end-to-end development and deployment of 3 production NLP services for document understanding. Primary technical owner for one service. Built evaluation pipelines to measure model quality and business impact across releases.",
+    stack: ["Python", "PyTorch", "Transformers", "Docker", "REST APIs", "MLflow"],
+    links: [],
+  },
+  {
+    title: "Biomedical NLP Research",
+    period: "2020 – 2022",
+    org: "Imagia",
+    description:
+      "Researched and built NLP pipelines for clinical report analysis — including de-identification, named entity recognition, and measurement extraction. Applied transformer-based models (BioBERT, ClinicalBERT) to real-world hospital data.",
+    stack: ["Python", "PyTorch", "spaCy", "BioBERT", "Hugging Face", "CLI tooling"],
     links: [],
   },
   {
@@ -13,7 +31,7 @@ const projects = [
     period: "2020 – 2021",
     org: "Dalhousie University",
     description:
-      "CLI library for exploring four multi-task learning architectures with pre-trained language models. Proposed a novel task-clustering approach. Published at DocEng-2021; served as M.Sc. thesis.",
+      "CLI library for exploring four multi-task learning architectures with pre-trained language models. Proposed a novel task-clustering approach that improved cross-task transfer. Published at ACM DocEng-2021; served as M.Sc. thesis.",
     stack: ["Python", "PyTorch", "BERT", "BioBERT", "BlueBERT", "Hugging Face"],
     links: [
       {
