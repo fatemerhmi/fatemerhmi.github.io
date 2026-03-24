@@ -6,6 +6,17 @@ import remarkHtml from "remark-html";
 
 const postsDir = path.join(process.cwd(), "content/blog");
 
+function formatDate(raw: unknown): string {
+  if (!raw) return "";
+  const d = raw instanceof Date ? raw : new Date(String(raw));
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 export interface PostMeta {
   slug: string;
   title: string;
@@ -30,7 +41,7 @@ export function getAllPosts(): PostMeta[] {
       return {
         slug,
         title: data.title ?? slug,
-        date: String(data.date ?? ""),
+        date: formatDate(data.date),
         tags: data.tags ?? [],
         draft: data.draft ?? false,
         excerpt: data.excerpt ?? "",
@@ -48,7 +59,7 @@ export async function getPost(slug: string): Promise<Post> {
   return {
     slug,
     title: data.title ?? slug,
-    date: String(data.date ?? ""),
+    date: formatDate(data.date),
     tags: data.tags ?? [],
     draft: data.draft ?? false,
     excerpt: data.excerpt ?? "",
