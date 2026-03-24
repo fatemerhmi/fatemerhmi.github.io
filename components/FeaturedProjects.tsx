@@ -1,7 +1,7 @@
 const projects = [
   {
     title: "Multi-agent Support Automation",
-    period: "2023 – present",
+    period: "2025 – present",
     org: "Pythonic AI",
     description:
       "Architected an LLM-powered multi-agent support workflow to triage incoming requests, execute routine code and configuration changes, and escalate ambiguous cases to humans. Combined tool-using agents, retrieval, and human-in-the-loop review to reduce manual engineering effort and speed up support resolution.",
