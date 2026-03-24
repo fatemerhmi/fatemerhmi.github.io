@@ -35,7 +35,7 @@ export default function Hero() {
               understanding, retrieval, evaluation, and human-in-the-loop
               agentic workflows. Over the last 7+ years, I&apos;ve shipped applied AI
               systems spanning transformer fine-tuning, RAG pipelines, and
-              multi-agent LLM orchestration — most recently as a Senior NLP
+              multi-agent LLM orchestration; most recently as a Senior NLP
               Scientist at{" "}
               <a
                 href="https://www.pythonic.ai/"
