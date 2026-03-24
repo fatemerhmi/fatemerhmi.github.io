@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
 
 const postsDir = path.join(process.cwd(), "content/blog");
@@ -54,7 +55,7 @@ export function getAllPosts(): PostMeta[] {
 export async function getPost(slug: string): Promise<Post> {
   const raw = fs.readFileSync(path.join(postsDir, `${slug}.md`), "utf8");
   const { data, content } = matter(raw);
-  const processed = await remark().use(remarkHtml).process(content);
+  const processed = await remark().use(remarkGfm).use(remarkHtml).process(content);
 
   return {
     slug,

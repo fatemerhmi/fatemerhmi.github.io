@@ -3,25 +3,25 @@ title: "tmux: The Terminal Multiplexer That Changes How You Work"
 date: 2026-03-17
 tags: [tmux, terminal, developer-tools, productivity, claude-code]
 draft: false
-excerpt: "tmux lets you run multiple terminal sessions, split your screen into panes, and keep work running even after you disconnect. Here's everything you need to know — shortcuts and all."
+excerpt: "tmux lets you run multiple terminal sessions, split your screen into panes, and keep work running even after you disconnect. Here's everything you need to know, shortcuts and all."
 ---
 
 # tmux: The Terminal Multiplexer That Changes How You Work
 
-If you've ever lost work because your SSH connection dropped, or found yourself juggling five terminal tabs to run a server, edit a file, and tail logs — tmux is the fix.
+If you've ever lost work because your SSH connection dropped, or found yourself juggling five terminal tabs to run a server, edit a file, and tail logs, tmux is the fix.
 
 tmux (terminal multiplexer) lets you:
 
 - **Split one terminal into multiple panes** side by side or stacked
 - **Create multiple windows** (like browser tabs) inside a single session
-- **Detach and reattach** — your processes keep running even after you close the terminal
+- **Detach and reattach**: your processes keep running even after you close the terminal
 - **Name and switch between projects** without touching your mouse
 
 Once you start using it, you won't go back.
 
 ## A Real Example: Claude Code Multi-Agent Setup
 
-Here's what got me hooked. When running [Claude Code](https://claude.ai/code) in multi-agent mode, you often want several agents working in parallel — one orchestrating, others doing sub-tasks. The cleanest way to manage this is with tmux.
+Here's what got me hooked. When running [Claude Code](https://claude.ai/code) in multi-agent mode, you often want several agents working in parallel: one orchestrating, others doing sub-tasks. The cleanest way to manage this is with tmux.
 
 A typical setup looks like this:
 
@@ -62,7 +62,7 @@ Server
 
 ## The Prefix Key
 
-Every tmux shortcut starts with the **prefix key** — you press it first, then the command.
+Every tmux shortcut starts with the **prefix key**: press it first, then the command.
 
 The default is `Ctrl+B`. Many people remap it to `Ctrl+A` (like GNU Screen) or `Ctrl+Space`.
 
@@ -94,7 +94,7 @@ Sessions are your projects. Create one per context, name them, and switch freely
 | Switch to next/previous session | `prefix + )` / `prefix + (` |
 | Kill a session | `tmux kill-session -t myproject` |
 
-The `tmux new-session -A -s name` pattern is worth memorizing — it starts the session if it doesn't exist, or attaches if it does. Great for shell aliases.
+The `tmux new-session -A -s name` pattern is worth memorizing: it starts the session if it doesn't exist, or attaches if it does. Great for shell aliases.
 
 ---
 
@@ -164,7 +164,7 @@ bind % split-window -h -c "#{pane_current_path}"
 
 ## Copy Mode
 
-Copy mode turns your terminal into a scrollable buffer — useful for reading output or copying text without a mouse.
+Copy mode turns your terminal into a scrollable buffer, useful for reading output or copying text without a mouse.
 
 | What you want to do | How |
 |---------------------|-----|
@@ -253,12 +253,12 @@ alias tk='tmux kill-session -t'
 
 These are the resources I found most useful:
 
-- **[Tmux has forever changed the way I write code](https://www.youtube.com/watch?v=nTqu6w2wc68)** — Dreams of Code (YouTube). The best modern introduction, covers config, plugins, and Neovim integration. Viral on Hacker News for a reason.
-- **[tmuxcheatsheet.com](https://tmuxcheatsheet.com/)** — The cheat sheet to bookmark. Every shortcut, scannable.
-- **[tmux Wiki — Getting Started](https://github.com/tmux/tmux/wiki/Getting-Started)** — The official deep dive. Read this when you want to understand *why* things work, not just *how*.
-- **[MohamedAlaa's cheat sheet gist](https://gist.github.com/MohamedAlaa/2961058)** — The classic community reference, 16k+ stars, still holds up.
-- **[A beginner's guide to tmux — Red Hat](https://www.redhat.com/en/blog/introduction-tmux-linux)** — Good framing if you're using tmux mostly over SSH.
+- **[Tmux has forever changed the way I write code](https://www.youtube.com/watch?v=nTqu6w2wc68)** by Dreams of Code (YouTube). The best modern introduction, covers config, plugins, and Neovim integration. Viral on Hacker News for a reason.
+- **[tmuxcheatsheet.com](https://tmuxcheatsheet.com/)**: the cheat sheet to bookmark. Every shortcut, scannable.
+- **[tmux Wiki: Getting Started](https://github.com/tmux/tmux/wiki/Getting-Started)**: the official deep dive. Read this when you want to understand *why* things work, not just *how*.
+- **[MohamedAlaa's cheat sheet gist](https://gist.github.com/MohamedAlaa/2961058)**: the classic community reference, 16k+ stars, still holds up.
+- **[A beginner's guide to tmux (Red Hat)](https://www.redhat.com/en/blog/introduction-tmux-linux)**: good framing if you're using tmux mostly over SSH.
 
 ---
 
-The first time you close your terminal, reopen it, run `tmux attach`, and see everything exactly where you left it — that's when it clicks. Start with sessions and pane splitting, ignore plugins until you need them, and go from there.
+The first time you close your terminal, reopen it, run `tmux attach`, and see everything exactly where you left it. That's when it clicks. Start with sessions and pane splitting, ignore plugins until you need them, and go from there.
