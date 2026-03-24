@@ -4,8 +4,8 @@ const projects = [
     period: "2023 – present",
     org: "Pythonic AI",
     description:
-      "Designed and built an LLM-powered multi-agent system that autonomously triages and resolves support emails involving routine code and configuration changes. Uses prompt-engineered reasoning chains, tool orchestration, and human-in-the-loop escalation to reduce manual engineering effort.",
-    stack: ["Python", "LLM APIs", "Multi-agent orchestration", "RAG", "Prompt engineering"],
+      "Architected an LLM-powered multi-agent support workflow to triage incoming requests, execute routine code and configuration changes, and escalate ambiguous cases to humans. Combined tool-using agents, retrieval, and human-in-the-loop review to reduce manual engineering effort and speed up support resolution.",
+    stack: ["Python", "LLM APIs", "Multi-agent orchestration", "RAG", "Human-in-the-loop", "Prompt engineering"],
     links: [],
   },
   {
@@ -13,7 +13,7 @@ const projects = [
     period: "2022 – present",
     org: "Pythonic AI",
     description:
-      "Led end-to-end development and deployment of 3 production NLP services for document understanding. Primary technical owner for one service. Built evaluation pipelines to measure model quality and business impact across releases.",
+      "Led development and deployment of 3 production NLP services for document understanding, serving real-world extraction and classification workflows. Acted as primary technical owner for one service and built evaluation pipelines to measure model quality across releases and support reliable iteration.",
     stack: ["Python", "PyTorch", "Transformers", "Docker", "REST APIs", "MLflow"],
     links: [],
   },
