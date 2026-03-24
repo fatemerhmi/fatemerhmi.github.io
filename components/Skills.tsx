@@ -14,6 +14,8 @@ const skillGroups = [
       "OpenAI API",
       "Anthropic API",
       "Multi-agent orchestration",
+      "Agentic workflows",
+      "Human-in-the-loop systems",
       "Prompt engineering",
       "LLM evaluation",
     ],
@@ -39,7 +41,16 @@ const skillGroups = [
   },
   {
     group: "Infrastructure",
-    items: ["Git", "Docker", "REST APIs", "MySQL", "tmux"],
+    items: [
+      "Git",
+      "Docker",
+      "REST APIs",
+      "MLflow",
+      "GitHub Actions",
+      "CLI tooling",
+      "Evaluation pipelines",
+      "tmux",
+    ],
   },
 ];
 
