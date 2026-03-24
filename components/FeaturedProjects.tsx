@@ -5,7 +5,7 @@ const projects = [
     org: "Pythonic AI",
     description:
       "Architected an LLM-powered multi-agent support workflow to triage incoming requests, execute routine code and configuration changes, and escalate ambiguous cases to humans. Combined tool-using agents, retrieval, and human-in-the-loop review to reduce manual engineering effort and speed up support resolution.",
-    stack: ["Python", "LLM APIs", "Multi-agent orchestration", "RAG", "Human-in-the-loop", "Prompt engineering"],
+    stack: ["Python", "LLM APIs", "smolagents", "Hugging Face", "RAG", "Human-in-the-loop", "Prompt engineering"],
     links: [],
   },
   {
