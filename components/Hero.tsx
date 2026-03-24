@@ -25,16 +25,18 @@ export default function Hero() {
           {/* Text */}
           <div className="text-center md:text-left">
             <p className="text-blue-600 font-medium text-sm tracking-wide uppercase mb-2">
-              Senior NLP &amp; AI Scientist
+              Senior Applied AI Scientist · NLP · LLM Systems
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
               Fatemeh Rahimi
             </h1>
             <p className="text-lg text-slate-600 max-w-xl mb-8 leading-relaxed">
-              7+ years shipping production NLP and AI systems — from
-              transformer fine-tuning and RAG pipelines to multi-agent LLM
-              orchestration and document understanding. Currently leading
-              AI development as a Senior NLP Scientist at{" "}
+              I build production NLP and GenAI systems with a focus on document
+              understanding, retrieval, evaluation, and human-in-the-loop
+              agentic workflows. Over the last 7+ years, I&apos;ve shipped applied AI
+              systems spanning transformer fine-tuning, RAG pipelines, and
+              multi-agent LLM orchestration — most recently as a Senior NLP
+              Scientist at{" "}
               <a
                 href="https://www.pythonic.ai/"
                 target="_blank"
