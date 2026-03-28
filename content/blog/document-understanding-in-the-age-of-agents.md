@@ -50,6 +50,8 @@ This was the main takeaway for me.
 
 If two systems answer a question correctly, standard evaluation might treat them as equally good. But in practice, they may have behaved very differently.
 
+For example, imagine a system is asked: **“Across a collection of company reports, when did the organization first commit to a net-zero target?”** A strong agent would not search every document equally. It would prioritize likely sources such as sustainability reports, search for the relevant terms, compare evidence across years, and stop once the answer is supported. A weaker agent might still reach the same conclusion, but only after opening many irrelevant files, repeating similar searches, and wasting effort along the way.
+
 One system might:
 - identify the right document quickly
 - gather the right evidence
