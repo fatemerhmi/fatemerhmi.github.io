@@ -99,6 +99,19 @@ function addHeadingIds(html: string, headings: PostHeading[]): string {
     });
 }
 
+function isExternalHref(href: string): boolean {
+  return /^(https?:)?\/\//i.test(href);
+}
+
+function addExternalLinkTargets(html: string): string {
+  return html.replace(/<a\s+([^>]*?)href="([^"]+)"([^>]*)>/gi, (match, before, href, after) => {
+    if (!isExternalHref(href)) return match;
+    if (/\btarget=/.test(match)) return match;
+
+    return `<a ${before}href="${href}"${after} target="_blank" rel="noopener noreferrer">`;
+  });
+}
+
 export function getAllPosts(): PostMeta[] {
   const files = fs.readdirSync(postsDir).filter((f) => f.endsWith(".md"));
 
@@ -126,7 +139,7 @@ export async function getPost(slug: string): Promise<Post> {
   const { data, content } = matter(raw);
   const headings = extractHeadings(content);
   const processed = await remark().use(remarkGfm).use(remarkHtml).process(content);
-  const contentHtml = addHeadingIds(processed.toString(), headings);
+  const contentHtml = addExternalLinkTargets(addHeadingIds(processed.toString(), headings));
 
   return {
     slug,
