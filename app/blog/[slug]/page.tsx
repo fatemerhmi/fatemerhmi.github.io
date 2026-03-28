@@ -36,7 +36,7 @@ export default async function BlogPost({
           </Link>
 
           <p className="text-xs text-slate-400 mb-2">{post.date}</p>
-          <h1 className="text-3xl font-bold text-slate-900 mb-4">{post.title}</h1>
+          <h1 id="post-top" className="text-3xl font-bold text-slate-900 mb-4">{post.title}</h1>
 
           {post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-10">
@@ -57,7 +57,9 @@ export default async function BlogPost({
           />
         </div>
 
-        <BlogToc headings={post.headings} />
+        <BlogToc
+          headings={[{ id: "post-top", text: post.title, level: 2 }, ...post.headings]}
+        />
       </div>
     </main>
   );
