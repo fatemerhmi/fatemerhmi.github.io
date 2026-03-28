@@ -18,6 +18,18 @@ function formatDate(raw: unknown): string {
   });
 }
 
+function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/<[^>]+>/g, "")
+    .replace(/[“”"'`]/g, "")
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
+
 export type PostType = "Tools" | "Papers";
 
 function normalizePostType(value: unknown): PostType {
@@ -28,6 +40,12 @@ function normalizePostType(value: unknown): PostType {
   }
 
   return "Tools";
+}
+
+export interface PostHeading {
+  level: 2 | 3;
+  text: string;
+  id: string;
 }
 
 export interface PostMeta {
@@ -42,6 +60,43 @@ export interface PostMeta {
 
 export interface Post extends PostMeta {
   contentHtml: string;
+  headings: PostHeading[];
+}
+
+function extractHeadings(markdown: string): PostHeading[] {
+  const counts = new Map<string, number>();
+
+  return markdown
+    .split("\n")
+    .map((line) => line.match(/^(##|###)\s+(.+)$/))
+    .filter((match): match is RegExpMatchArray => Boolean(match))
+    .map((match) => {
+      const level = match[1].length as 2 | 3;
+      const text = match[2].trim();
+      const baseId = slugifyHeading(text);
+      const seen = counts.get(baseId) ?? 0;
+      counts.set(baseId, seen + 1);
+      const id = seen === 0 ? baseId : `${baseId}-${seen + 1}`;
+
+      return { level, text, id };
+    });
+}
+
+function addHeadingIds(html: string, headings: PostHeading[]): string {
+  let h2Index = 0;
+  let h3Index = 0;
+  const h2Headings = headings.filter((heading) => heading.level === 2);
+  const h3Headings = headings.filter((heading) => heading.level === 3);
+
+  return html
+    .replace(/<h2>(.*?)<\/h2>/g, (_, text) => {
+      const heading = h2Headings[h2Index++];
+      return heading ? `<h2 id="${heading.id}">${text}</h2>` : `<h2>${text}</h2>`;
+    })
+    .replace(/<h3>(.*?)<\/h3>/g, (_, text) => {
+      const heading = h3Headings[h3Index++];
+      return heading ? `<h3 id="${heading.id}">${text}</h3>` : `<h3>${text}</h3>`;
+    });
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -69,7 +124,9 @@ export function getAllPosts(): PostMeta[] {
 export async function getPost(slug: string): Promise<Post> {
   const raw = fs.readFileSync(path.join(postsDir, `${slug}.md`), "utf8");
   const { data, content } = matter(raw);
+  const headings = extractHeadings(content);
   const processed = await remark().use(remarkGfm).use(remarkHtml).process(content);
+  const contentHtml = addHeadingIds(processed.toString(), headings);
 
   return {
     slug,
@@ -79,6 +136,7 @@ export async function getPost(slug: string): Promise<Post> {
     type: normalizePostType(data.type),
     draft: data.draft ?? false,
     excerpt: data.excerpt ?? "",
-    contentHtml: processed.toString(),
+    contentHtml,
+    headings,
   };
 }

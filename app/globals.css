@@ -9,3 +9,8 @@ html {
 body {
   @apply bg-white text-slate-900 antialiased;
 }
+
+.blog-post h2,
+.blog-post h3 {
+  scroll-margin-top: 6rem;
+}
