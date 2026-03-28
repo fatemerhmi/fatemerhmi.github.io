@@ -7,8 +7,6 @@ draft: false
 excerpt: "tmux lets you run multiple terminal sessions, split your screen into panes, and keep work running even after you disconnect. Here's everything you need to know, shortcuts and all."
 ---
 
-# tmux: The Terminal Multiplexer That Changes How You Work
-
 If you've ever lost work because your SSH connection dropped, or found yourself juggling five terminal tabs to run a server, edit a file, and tail logs, tmux is the fix.
 
 tmux (terminal multiplexer) lets you:
