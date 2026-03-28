@@ -18,11 +18,24 @@ function formatDate(raw: unknown): string {
   });
 }
 
+export type PostType = "Tools" | "Papers";
+
+function normalizePostType(value: unknown): PostType {
+  const normalized = String(value ?? "").trim().toLowerCase();
+
+  if (normalized === "papers" || normalized === "paper") {
+    return "Papers";
+  }
+
+  return "Tools";
+}
+
 export interface PostMeta {
   slug: string;
   title: string;
   date: string;
   tags: string[];
+  type: PostType;
   draft: boolean;
   excerpt?: string;
 }
@@ -44,6 +57,7 @@ export function getAllPosts(): PostMeta[] {
         title: data.title ?? slug,
         date: formatDate(data.date),
         tags: data.tags ?? [],
+        type: normalizePostType(data.type),
         draft: data.draft ?? false,
         excerpt: data.excerpt ?? "",
       };
@@ -62,6 +76,7 @@ export async function getPost(slug: string): Promise<Post> {
     title: data.title ?? slug,
     date: formatDate(data.date),
     tags: data.tags ?? [],
+    type: normalizePostType(data.type),
     draft: data.draft ?? false,
     excerpt: data.excerpt ?? "",
     contentHtml: processed.toString(),

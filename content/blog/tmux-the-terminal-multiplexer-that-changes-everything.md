@@ -1,6 +1,7 @@
 ---
 title: "tmux: The Terminal Multiplexer That Changes How You Work"
 date: 2026-03-17
+type: Tools
 tags: [tmux, terminal, developer-tools, productivity, claude-code]
 draft: false
 excerpt: "tmux lets you run multiple terminal sessions, split your screen into panes, and keep work running even after you disconnect. Here's everything you need to know, shortcuts and all."
