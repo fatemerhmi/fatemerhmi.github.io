@@ -3,7 +3,7 @@ title: "Reading \"Strategic Navigation or Stochastic Search?\": Document AI, Age
 date: 2026-03-28
 type: Papers
 tags: [document-ai, agents, evaluation, multimodal, papers]
-draft: true
+draft: false
 excerpt: "A paper note on how document understanding is shifting from static extraction toward agentic navigation, evidence gathering, and evaluation over document collections."
 ---
 
