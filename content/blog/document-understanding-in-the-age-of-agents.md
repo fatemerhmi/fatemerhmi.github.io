@@ -109,22 +109,15 @@ So even when aggregate accuracy looks strong, the underlying capability may stil
 
 This is why I think evaluation is becoming one of the most interesting parts of the field. Once systems become more agentic, the key question is not just *what answer did they give?* but also *how did they get there?*
 
-## A broader shift in document AI
+## A useful expansion in document AI evaluation
 
-What I like about this paper is that it reflects a bigger shift in how I think about document intelligence.
+What I like about this paper is not that it replaces the older view of document AI, but that it expands it in a useful direction.
 
-The older framing was often:
-- can we read the page?
-- can we parse the layout?
-- can we extract the right fields?
+A lot of document understanding work still depends on strong foundations such as OCR, layout modeling, extraction, classification, and question answering. Those problems have not gone away. But when systems start operating over **collections** of documents rather than single pages or single files, a different challenge appears: not just reading documents correctly, but **navigating them efficiently and reasoning across them well**.
 
-The newer framing is increasingly:
-- can we navigate across documents?
-- can we retrieve the right evidence?
-- can we reason efficiently over a collection?
-- can we evaluate whether the system is actually behaving intelligently?
+That is where this paper feels valuable to me. It does not argue that all of document AI should now be treated as agentic search. But it does show that for multi-document workflows, we need richer evaluation methods — ones that capture search strategy, evidence gathering, and effort, not just final-answer accuracy [(Borchmann et al., 2026)](https://arxiv.org/abs/2603.12180).
 
-That feels much closer to the kinds of systems people actually want to build:
+That feels especially relevant for systems like:
 - contract review assistants
 - policy and compliance search tools
 - document-heavy enterprise copilots
