@@ -9,11 +9,11 @@ const projects = [
     links: [],
   },
   {
-    title: "Production NLP Services",
+    title: "Production NLP Services for Title and Escrow Workflows",
     period: "2022 – present",
     org: "Pythonic AI",
     description:
-      "Led development and deployment of 3 production NLP services for document understanding, serving real-world extraction and classification workflows. Acted as primary technical owner for one service and built evaluation pipelines to measure model quality across releases and support reliable iteration.",
+      "Led development and deployment of 3 production NLP services for document-heavy title and escrow workflows, supporting extraction and classification across insurance, loan, mortgage, and signed closing documents. Served as primary technical owner for one service and built evaluation pipelines to measure model quality across releases and support reliable iteration.",
     stack: ["Python", "PyTorch", "Transformers", "Docker", "REST APIs", "MLflow"],
     links: [],
   },

@@ -6,9 +6,9 @@ const jobs = [
     location: "Milwaukee, WI, US (Remote)",
     period: "Feb 2022 – Present",
     bullets: [
-      "Led development and deployment of 3 production NLP services for document understanding; served as primary technical owner for one",
+      "Led development and deployment of 3 production NLP services for title and escrow workflows, enabling extraction and classification across insurance, loan, mortgage, and signed closing documents; served as primary technical owner for one",
       "Architected an LLM-powered multi-agent workflow with tool orchestration and human-in-the-loop escalation to automate support email triage and resolution",
-      "Built evaluation pipelines for LLM agents, measuring tool-calling correctness and workflow quality to support more reliable iteration across releases",
+      "Built evaluation pipelines for LLM agents and production NLP systems, measuring tool-calling correctness and model quality to support more reliable iteration across releases",
       "Developed automation tooling to streamline internal workflows across data labeling, sprint planning, and QA",
       "Coordinated cross-functional annotation workflows and mentored team members on NLP and applied AI best practices",
     ],

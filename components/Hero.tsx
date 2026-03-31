@@ -31,21 +31,11 @@ export default function Hero() {
               Fatemeh Rahimi
             </h1>
             <p className="text-lg text-slate-600 max-w-xl mb-8 leading-relaxed">
-              I build production NLP and GenAI systems with a focus on document
-              understanding, retrieval, evaluation, and human-in-the-loop
-              agentic workflows. Over the last 7+ years, I&apos;ve shipped applied AI
-              systems spanning transformer fine-tuning, RAG pipelines, and
-              multi-agent LLM orchestration; most recently as a Senior NLP
-              Scientist at{" "}
-              <a
-                href="https://www.pythonic.ai/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                Pythonic AI
-              </a>
-              .
+              I design and ship applied AI systems for document understanding,
+              retrieval, evaluation, and workflow automation. Over 7+ years,
+              I&apos;ve worked across biomedical NLP, production ML services, and
+              LLM-based agent workflows, with a focus on building systems that
+              are useful, reliable, and grounded in real-world constraints.
             </p>
 
             {/* CTAs */}
