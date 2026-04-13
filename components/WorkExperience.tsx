@@ -1,18 +1,30 @@
 const jobs = [
   {
-    title: "Senior NLP Scientist",
+    title: "Lead Data Scientist",
     company: "Pythonic AI",
     companyUrl: "https://www.pythonic.ai/",
     location: "Milwaukee, WI, US (Remote)",
-    period: "Feb 2022 – Present",
+    period: "Apr 2026 – Present",
     bullets: [
-      "Led development and deployment of 3 production NLP services for title and escrow workflows, enabling extraction and classification across insurance, loan, mortgage, and signed closing documents; served as primary technical owner for one",
-      "Architected an LLM-powered multi-agent workflow with tool orchestration and human-in-the-loop escalation to automate support email triage and resolution",
-      "Built evaluation pipelines for LLM agents and production NLP systems, measuring tool-calling correctness and model quality to support more reliable iteration across releases",
-      "Developed automation tooling to streamline internal workflows across data labeling, sprint planning, and QA",
-      "Coordinated cross-functional annotation workflows and mentored team members on NLP and applied AI best practices",
+      "Leading applied AI and data science work across production NLP systems and LLM-based workflows at Pythonic AI",
+      "Setting technical direction on evaluation strategy, model quality, and practical AI system design for production use cases",
+      "Supporting cross-functional delivery and mentoring teammates across research, annotation, and production-facing AI work",
     ],
     highlight: true,
+  },
+  {
+    title: "Senior NLP & AI Scientist",
+    company: "Pythonic AI",
+    companyUrl: "https://www.pythonic.ai/",
+    location: "Milwaukee, WI, US (Remote)",
+    period: "Feb 2022 – Mar 2026",
+    bullets: [
+      "Led development and deployment of 3 production NLP services for title and escrow workflows, enabling extraction and classification across insurance, loan, mortgage, and signed closing documents; served as technical owner for one production service",
+      "Architected an LLM-powered multi-agent workflow with tool orchestration and human-in-the-loop escalation to automate support email triage and resolution",
+      "Built evaluation pipelines for LLM agents and production NLP systems, measuring tool-calling correctness and model quality to support more reliable iteration across releases",
+      "Developed internal automation tooling to streamline data labeling, sprint planning, and QA workflows",
+      "Coordinated cross-functional annotation efforts and mentored teammates on NLP, evaluation, and applied AI best practices",
+    ],
   },
   {
     title: "Applied Research Scientist – NLP",

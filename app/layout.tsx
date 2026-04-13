@@ -9,31 +9,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Fatemeh Rahimi — Senior NLP & AI Scientist",
+  title: "Fatemeh Rahimi — Lead Data Scientist | NLP & AI",
   description:
-    "7+ years building production NLP systems — from transformer fine-tuning to multi-agent LLM pipelines and document understanding. Currently a Senior NLP Scientist at Pythonic AI.",
+    "Lead Data Scientist with 7+ years building production NLP systems, LLM workflows, and document understanding products. Currently leading applied AI work at Pythonic AI.",
   keywords: [
+    "Lead Data Scientist",
     "NLP",
     "Machine Learning",
     "AI",
     "LLM",
     "Transformer",
     "Python",
-    "Senior NLP Scientist",
   ],
   authors: [{ name: "Fatemeh Rahimi" }],
   openGraph: {
-    title: "Fatemeh Rahimi — Senior NLP & AI Scientist",
+    title: "Fatemeh Rahimi — Lead Data Scientist | NLP & AI",
     description:
-      "7+ years building production NLP systems — transformer fine-tuning, multi-agent LLM pipelines, document understanding.",
+      "Lead Data Scientist with 7+ years building production NLP systems, LLM workflows, and document understanding products.",
     type: "website",
     url: "https://fatemerhmi.github.io",
   },
   twitter: {
     card: "summary",
-    title: "Fatemeh Rahimi — Senior NLP & AI Scientist",
+    title: "Fatemeh Rahimi — Lead Data Scientist | NLP & AI",
     description:
-      "7+ years building production NLP systems — transformer fine-tuning, multi-agent LLM pipelines, document understanding.",
+      "Lead Data Scientist with 7+ years building production NLP systems, LLM workflows, and document understanding products.",
     creator: "@Fatemeh__Rahimi",
   },
 };

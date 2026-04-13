@@ -10,7 +10,47 @@ body {
   @apply bg-white text-slate-900 antialiased;
 }
 
+.resume-section-title {
+  @apply text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500;
+}
+
 .blog-post h2,
 .blog-post h3 {
   scroll-margin-top: 6rem;
+}
+
+@media print {
+  html,
+  body {
+    background: white !important;
+  }
+
+  nav {
+    display: none !important;
+  }
+
+  .resume-page {
+    background: white !important;
+  }
+
+  .resume-shell {
+    max-width: 100% !important;
+    padding: 0.45in 0.55in !important;
+  }
+
+  .resume-header,
+  .resume-bottom-grid {
+    break-inside: avoid;
+  }
+
+  section,
+  li,
+  p {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
 }
