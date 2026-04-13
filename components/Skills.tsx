@@ -68,6 +68,7 @@ const DEFAULT_LEVEL = 10;
 
 const skillLinks: Record<string, string> = {
   tmux: "/blog?tag=tmux",
+  pandas: "/blog?tag=pandas",
 };
 
 function Pill({ label }: { label: string }) {
