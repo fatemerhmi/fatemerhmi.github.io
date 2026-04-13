@@ -2,6 +2,16 @@ const contributions = [
   {
     repo: "Softeria/ms-365-mcp-server",
     repoUrl: "https://github.com/Softeria/ms-365-mcp-server",
+    prTitle: "feat: add move/rename and create folder tools for OneDrive",
+    prUrl: "https://github.com/Softeria/ms-365-mcp-server/pull/345",
+    description:
+      "Added two new OneDrive tools to this MCP server for Microsoft 365 — move/rename files and folders in a single PATCH request, and create new folders with conflict behavior support. Closes a workflow gap where users couldn't reorganize their OneDrive without leaving the AI assistant.",
+    status: "Open" as const,
+    stack: ["TypeScript", "Microsoft Graph API", "MCP", "Files.ReadWrite"],
+  },
+  {
+    repo: "Softeria/ms-365-mcp-server",
+    repoUrl: "https://github.com/Softeria/ms-365-mcp-server",
     prTitle: "feat: add create, update, and delete mail folder tools",
     prUrl: "https://github.com/Softeria/ms-365-mcp-server/pull/276",
     description:

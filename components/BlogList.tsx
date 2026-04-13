@@ -30,8 +30,13 @@ export default function BlogList({ posts }: { posts: PostMeta[] }) {
   const activeType = isPostType(searchParams.get("type"))
     ? searchParams.get("type")
     : null;
+  const activeTag = searchParams.get("tag");
 
-  const filtered = activeType ? posts.filter((post) => post.type === activeType) : posts;
+  const filtered = posts.filter((post) => {
+    if (activeType && post.type !== activeType) return false;
+    if (activeTag && !post.tags.includes(activeTag)) return false;
+    return true;
+  });
 
   return (
     <>
@@ -59,6 +64,15 @@ export default function BlogList({ posts }: { posts: PostMeta[] }) {
             {type}
           </Link>
         ))}
+
+        {activeTag && (
+          <span className="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
+            #{activeTag}
+            <Link href="/blog" aria-label="Clear tag filter" className="ml-1 hover:text-blue-900">
+              ×
+            </Link>
+          </span>
+        )}
       </div>
 
       {filtered.length === 0 ? (
@@ -67,32 +81,39 @@ export default function BlogList({ posts }: { posts: PostMeta[] }) {
         <ul className="space-y-10">
           {filtered.map((post) => (
             <li key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group block">
-                <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <p className="text-xs text-slate-400">{post.date}</p>
-                  <span
-                    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${typeStyles[post.type].pill}`}
-                  >
-                    {post.type}
-                  </span>
-                </div>
-                <h2 className="text-xl font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
-                  {post.title}
-                </h2>
-                {post.excerpt && <p className="text-slate-500 text-sm">{post.excerpt}</p>}
+              <div>
+                <Link href={`/blog/${post.slug}`} className="group block">
+                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                    <p className="text-xs text-slate-400">{post.date}</p>
+                    <span
+                      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${typeStyles[post.type].pill}`}
+                    >
+                      {post.type}
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
+                    {post.title}
+                  </h2>
+                  {post.excerpt && <p className="text-slate-500 text-sm">{post.excerpt}</p>}
+                </Link>
                 {post.tags.length > 0 && (
                   <div className="flex flex-wrap gap-2 mt-3">
                     {post.tags.map((tag) => (
-                      <span
+                      <Link
                         key={tag}
-                        className="text-xs px-2 py-0.5 rounded bg-slate-100 text-slate-500"
+                        href={`/blog?tag=${tag}`}
+                        className={`text-xs px-2 py-0.5 rounded transition-colors ${
+                          activeTag === tag
+                            ? "bg-blue-100 text-blue-700"
+                            : "bg-slate-100 text-slate-500 hover:bg-blue-50 hover:text-blue-600"
+                        }`}
                       >
-                        {tag}
-                      </span>
+                        #{tag}
+                      </Link>
                     ))}
                   </div>
                 )}
-              </Link>
+              </div>
             </li>
           ))}
         </ul>

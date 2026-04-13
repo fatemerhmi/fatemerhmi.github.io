@@ -1,6 +1,7 @@
 import { getAllPosts, getPost } from "@/lib/posts";
 import Link from "next/link";
 import BlogToc from "@/components/BlogToc";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -13,6 +14,7 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const post = await getPost(slug);
+  if (post.draft) notFound();
   return { title: `${post.title} — Fatemeh Rahimi` };
 }
 
@@ -23,6 +25,7 @@ export default async function BlogPost({
 }) {
   const { slug } = await params;
   const post = await getPost(slug);
+  if (post.draft) notFound();
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
