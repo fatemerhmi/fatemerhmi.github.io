@@ -6,7 +6,7 @@ const contributions = [
     prUrl: "https://github.com/Softeria/ms-365-mcp-server/pull/345",
     description:
       "Added two new OneDrive tools to this MCP server for Microsoft 365 — move/rename files and folders in a single PATCH request, and create new folders with conflict behavior support. Closes a workflow gap where users couldn't reorganize their OneDrive without leaving the AI assistant.",
-    status: "Open" as const,
+    status: "Merged" as const,
     stack: ["TypeScript", "Microsoft Graph API", "MCP", "Files.ReadWrite"],
   },
   {

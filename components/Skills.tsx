@@ -11,8 +11,6 @@ const skillGroups = [
       "Hugging Face Transformers",
       "RAG pipelines",
       "LangChain / LangGraph",
-      "OpenAI API",
-      "Anthropic API",
       "Multi-agent orchestration",
       "Agentic workflows",
       "Human-in-the-loop systems",
@@ -29,7 +27,6 @@ const skillGroups = [
     items: [
       "spaCy",
       "NLTK",
-      "BERT / RoBERTa / ELECTRA",
       "Document understanding",
       "Named entity recognition",
       "Text classification",
@@ -45,7 +42,6 @@ const skillGroups = [
       "Git",
       "Docker",
       "REST APIs",
-      "MLflow",
       "GitHub Actions",
       "CLI tooling",
       "Evaluation pipelines",
@@ -57,6 +53,15 @@ const skillGroups = [
 const skillLevels: Record<string, number> = {
   Python: 80,
   SQL: 50,
+  "RAG pipelines": 85,
+  PyTorch: 80,
+  "scikit-learn": 70,
+  MLflow: 60,
+  spaCy: 60,
+  Git: 90,
+  Docker: 80,
+  "REST APIs": 50,
+  pandas: 80,
 };
 
 const DEFAULT_LEVEL = 10;
