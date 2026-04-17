@@ -25,7 +25,7 @@ export default function Hero() {
           {/* Text */}
           <div className="text-center md:text-left">
             <p className="text-blue-600 font-medium text-sm tracking-wide uppercase mb-2">
-              Senior Applied AI Scientist · NLP · LLM Systems
+              Lead Data Scientist · NLP · Agentic &amp; LLM Systems
             </p>
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
               Fatemeh Rahimi
