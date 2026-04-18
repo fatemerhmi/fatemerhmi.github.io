@@ -33,9 +33,10 @@ export default function Hero() {
             <p className="text-lg text-slate-600 max-w-xl mb-8 leading-relaxed">
               I design and ship applied AI systems for document understanding,
               retrieval, evaluation, and workflow automation. Over 7+ years,
-              I&apos;ve worked across biomedical NLP, production ML services, and
-              LLM-based agent workflows, with a focus on building systems that
-              are useful, reliable, and grounded in real-world constraints.
+              I&apos;ve worked across biomedical NLP, financial services (title &amp;
+              escrow), production ML services, and LLM-based agent workflows,
+              with a focus on building systems that are useful, reliable, and
+              grounded in real-world constraints.
             </p>
 
             {/* CTAs */}
