@@ -67,18 +67,18 @@ const skills = {
 
 export default function ResumePage() {
   return (
-    <main className="resume-page bg-white text-slate-900">
-      <div className="mx-auto max-w-[8.5in] px-8 py-10 resume-shell">
-        <header className="border-b border-slate-300 pb-5 mb-6">
+    <main className="resume-page bg-white text-slate-900 flex justify-center px-6 py-6">
+      <div className="w-full max-w-[8.5in] resume-shell">
+        <header className="border-b border-slate-300 pb-3 mb-4">
           <div className="flex items-start justify-between gap-6 resume-header">
             <div>
               <h1 className="text-3xl font-bold tracking-tight">Fatemeh Rahimi</h1>
               <p className="mt-1 text-base font-medium text-blue-700">Lead Data Scientist | NLP, LLM Systems, Applied AI</p>
-              <p className="mt-3 text-[14px] leading-6 text-slate-700 max-w-[6.2in]">
+              <p className="mt-2 text-[13px] leading-5 text-slate-700 max-w-[6.2in]">
                 Lead Data Scientist with 7+ years of experience building production NLP systems, LLM workflows, and applied ML products. Strong background in document understanding, evaluation, retrieval, and practical AI systems that work under real-world constraints.
               </p>
             </div>
-            <div className="text-sm leading-6 text-slate-600 resume-contact">
+            <div className="text-[13px] leading-5 text-slate-600 resume-contact">
               <div>Halifax, NS, Canada</div>
               <div>fateme.rhmi@gmail.com</div>
               <div>fatemerhmi.github.io</div>
@@ -88,19 +88,19 @@ export default function ResumePage() {
           </div>
         </header>
 
-        <section className="mb-6">
+        <section className="mb-3">
           <h2 className="resume-section-title">Experience</h2>
-          <div className="space-y-5 mt-3">
+          <div className="space-y-2 mt-1.5">
             {experience.map((job) => (
               <div key={`${job.company}-${job.title}`}>
                 <div className="flex items-baseline justify-between gap-4">
                   <div>
-                    <h3 className="font-semibold text-[15px]">{job.title}</h3>
-                    <p className="text-[14px] text-slate-700">{job.company} | {job.location}</p>
+                    <h3 className="font-semibold text-[13.5px]">{job.title}</h3>
+                    <p className="text-[12.5px] text-slate-700">{job.company} | {job.location}</p>
                   </div>
-                  <div className="text-[13px] text-slate-500 whitespace-nowrap">{job.period}</div>
+                  <div className="text-[12px] text-slate-500 whitespace-nowrap">{job.period}</div>
                 </div>
-                <ul className="mt-2 space-y-1.5 pl-5 list-disc text-[13.5px] leading-6 text-slate-700">
+                <ul className="mt-0.5 space-y-0 pl-5 list-disc text-[12px] leading-[1.4] text-slate-700">
                   {job.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
@@ -110,9 +110,9 @@ export default function ResumePage() {
           </div>
         </section>
 
-        <section className="mb-6">
+        <section className="mb-3">
           <h2 className="resume-section-title">Selected Projects</h2>
-          <div className="mt-3 space-y-3 text-[13.5px] leading-6 text-slate-700">
+          <div className="mt-1.5 space-y-1 text-[12px] leading-[1.4] text-slate-700">
             {projects.map((project) => (
               <p key={project.name}>
                 <span className="font-semibold text-slate-900">{project.name}:</span> {project.detail}
@@ -121,9 +121,9 @@ export default function ResumePage() {
           </div>
         </section>
 
-        <section className="mb-6">
+        <section className="mb-3">
           <h2 className="resume-section-title">Skills</h2>
-          <div className="mt-3 space-y-2 text-[13.5px] leading-6 text-slate-700">
+          <div className="mt-1.5 space-y-0.5 text-[12px] leading-[1.4] text-slate-700">
             {Object.entries(skills).map(([group, items]) => (
               <p key={group}>
                 <span className="font-semibold text-slate-900">{group}:</span> {items.join(", ")}
@@ -135,7 +135,7 @@ export default function ResumePage() {
         <section className="grid grid-cols-2 gap-8 resume-bottom-grid">
           <div>
             <h2 className="resume-section-title">Education</h2>
-            <div className="mt-3 space-y-3 text-[13.5px] leading-6 text-slate-700">
+            <div className="mt-1.5 space-y-1.5 text-[12px] leading-[1.4] text-slate-700">
               <div>
                 <div className="font-semibold text-slate-900">M.Sc., Computer Science</div>
                 <div>Dalhousie University, Halifax, Canada</div>
@@ -150,7 +150,7 @@ export default function ResumePage() {
           </div>
           <div>
             <h2 className="resume-section-title">Publication</h2>
-            <div className="mt-3 text-[13.5px] leading-6 text-slate-700">
+            <div className="mt-1.5 text-[12px] leading-[1.4] text-slate-700">
               <p>
                 <span className="font-semibold text-slate-900">MTLV: A Library for Building Multi-task Learning Architectures for NLP</span>
                 <br />
