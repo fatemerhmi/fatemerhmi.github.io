@@ -19,6 +19,19 @@ body {
   scroll-margin-top: 6rem;
 }
 
+.blog-post :not(pre) > code {
+  color: #1d4ed8;
+  background-color: #eff6ff;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.blog-post :not(pre) > code::before,
+.blog-post :not(pre) > code::after {
+  content: none;
+}
+
 @media print {
   html,
   body {

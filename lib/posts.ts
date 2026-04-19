@@ -52,6 +52,7 @@ export interface PostMeta {
   slug: string;
   title: string;
   date: string;
+  lastEdited?: string;
   tags: string[];
   type: PostType;
   draft: boolean;
@@ -124,14 +125,17 @@ export function getAllPosts(): PostMeta[] {
         slug,
         title: data.title ?? slug,
         date: formatDate(data.date),
+        lastEdited: data.lastEdited ? formatDate(data.lastEdited) : undefined,
         tags: data.tags ?? [],
         type: normalizePostType(data.type),
         draft: data.draft ?? false,
         excerpt: data.excerpt ?? "",
+        _rawDate: data.date instanceof Date ? data.date : new Date(String(data.date ?? "")),
       };
     })
     .filter((p) => !p.draft)
-    .sort((a, b) => (a.date < b.date ? 1 : -1));
+    .sort((a, b) => b._rawDate.getTime() - a._rawDate.getTime())
+    .map(({ _rawDate, ...rest }) => rest);
 }
 
 export async function getPost(slug: string): Promise<Post> {
@@ -145,6 +149,7 @@ export async function getPost(slug: string): Promise<Post> {
     slug,
     title: data.title ?? slug,
     date: formatDate(data.date),
+    lastEdited: data.lastEdited ? formatDate(data.lastEdited) : undefined,
     tags: data.tags ?? [],
     type: normalizePostType(data.type),
     draft: data.draft ?? false,

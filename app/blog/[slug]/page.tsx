@@ -38,7 +38,12 @@ export default async function BlogPost({
             ← Writing
           </Link>
 
-          <p className="text-xs text-slate-400 mb-2">{post.date}</p>
+          <p className="text-xs text-slate-400 mb-2">
+            {post.date}
+            {post.lastEdited && (
+              <span className="ml-3 text-slate-400">· Updated {post.lastEdited}</span>
+            )}
+          </p>
           <h1 id="post-top" className="text-3xl font-bold text-slate-900 mb-4">{post.title}</h1>
 
           {post.tags.length > 0 && (
